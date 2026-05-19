@@ -1,0 +1,302 @@
+/* ==========================================================================
+   Make Design System — colors_and_type.css
+   Brand refresh: from vibrant digital to sophisticated and grown-up.
+   ========================================================================== */
+
+/* --- Fonts -------------------------------------------------------------- */
+/* Primary: Satoshi Variable (body + display). Self-hosted when available.
+   Substitute fallback: Onest (Google Fonts) has the closest geometric-humanist
+   metrics. Flag: if Satoshi license isn't available, use Onest. */
+
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@300..900&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* ---------- Fonts ---------- */
+  --font-sans: "Satoshi", "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-display: "Satoshi", "Onest", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---------- Core ---------- */
+  --core-black: #101010;
+  --core-white: #ffffff;
+
+  /* ---------- Brand primitives (100–950) ----------
+     Refreshed palette: muted earthy purples + warm stones.
+     The legacy bright Make purple/magenta is reserved for the logo only. */
+
+  /* Orchid — brand primary. Blended palette: dignified tails,
+     vivid violet energy through 300–700. */
+  --orchid-50:  #f3ebfc;
+  --orchid-100: #e6d3fa;
+  --orchid-200: #d1aef6;
+  --orchid-300: #b584ef;
+  --orchid-400: #9a5de6;
+  --orchid-500: #7d36d8;
+  --orchid-600: #631dbc;
+  --orchid-700: #4c1498;
+  --orchid-800: #361070;
+  --orchid-900: #220c4a;
+  --orchid-950: #120628;
+
+  /* Mauve — rich plum accent for headlines and heroes */
+  --mauve-50:  #f7e7f8;
+  --mauve-100: #efd2f0;
+  --mauve-200: #dba9dd;
+  --mauve-300: #b97fbc;
+  --mauve-400: #8f5894;
+  --mauve-500: #6a3f70;
+  --mauve-600: #4f2e54;
+  --mauve-700: #3b223f;
+  --mauve-800: #2b192e;
+  --mauve-900: #1d1220;
+  --mauve-950: #0f0911;
+
+  /* Warm Grey — neutral temperature skewed warm */
+  --warm-grey-50:  #eeecef;
+  --warm-grey-100: #dcd9de;
+  --warm-grey-200: #c2bec6;
+  --warm-grey-300: #a49fa8;
+  --warm-grey-400: #857f8a;
+  --warm-grey-500: #6a6470;
+  --warm-grey-600: #514c57;
+  --warm-grey-700: #3d3942;
+  --warm-grey-800: #2b272e;
+  --warm-grey-900: #1c1a1f;
+  --warm-grey-950: #0e0d10;
+
+  /* Desert — warm sand / khaki for portraits and grounding */
+  --desert-50:  #f5efe7;
+  --desert-100: #e9dcc8;
+  --desert-200: #d6bf9c;
+  --desert-300: #bfa077;
+  --desert-400: #a38558;
+  --desert-500: #866c42;
+  --desert-600: #6b5634;
+  --desert-700: #514128;
+  --desert-800: #3a2f1d;
+  --desert-900: #231d12;
+  --desert-950: #14100a;
+
+  /* Abyss — deep blue-black for heavy surfaces and ads */
+  --abyss-50:  #e4e7ea;
+  --abyss-100: #c4cad1;
+  --abyss-200: #9099a4;
+  --abyss-300: #606976;
+  --abyss-400: #3b4552;
+  --abyss-500: #262d38;
+  --abyss-600: #1a212a;
+  --abyss-700: #14181f;
+  --abyss-800: #0e1116;
+  --abyss-900: #08090c;
+  --abyss-950: #030406;
+
+  /* Legacy brand magenta — protected, for logo and high-energy accents only */
+  --legacy-magenta-400: #F024F6;
+  --legacy-magenta-500: #C416F8;
+  --legacy-magenta-600: #9406F9;
+  --legacy-magenta-700: #8200FA;
+  --legacy-plum-900:    #220041;
+  --legacy-pink-100:    #FDD6E3;
+  --legacy-pink-300:    #F9A7FB;
+  --legacy-lavender-200:#EAD2FF;
+
+  /* Semantic status */
+  --red-50:  #fde8ea;  --red-500: #d24351;  --red-700: #8a2330;
+  --green-50:#e3efe6;  --green-500:#4a8a59; --green-700:#2d5635;
+  --yellow-50:#fbf1d2; --yellow-500:#c9a32a;--yellow-700:#846a15;
+
+  /* ---------- Semantic aliases (LIGHT) ---------- */
+  --bg-primary:    #FFFAFD;   /* warm near-white, the signature paper */
+  --bg-secondary:  #FCF3F8;   /* faint pink tint */
+  --bg-tertiary:   var(--warm-grey-100);
+  --bg-elevated:   #ffffff;
+  --bg-error:      var(--red-50);
+  --bg-success:    var(--green-50);
+  --bg-warning:    var(--yellow-50);
+  --bg-disabled:   var(--warm-grey-200);
+
+  --text-primary:   var(--legacy-plum-900);     /* #220041 — the deep plum */
+  --text-secondary: var(--warm-grey-700);
+  --text-tertiary:  var(--warm-grey-500);
+  --text-muted:     var(--warm-grey-400);
+  --text-inverse:   #ffffff;
+  --text-success:   var(--green-700);
+  --text-warning:   var(--yellow-700);
+  --text-error:     var(--red-700);
+  --text-disabled:  var(--warm-grey-400);
+  --text-fixed-white: #ffffff;
+  --text-fixed-black: var(--core-black);
+
+  --surface-primary:   #ffffff;
+  --surface-secondary: var(--warm-grey-50);
+  --surface-tertiary:  var(--orchid-100);
+  --surface-error:     var(--red-50);
+  --surface-success:   var(--green-50);
+  --surface-warning:   var(--yellow-50);
+  --surface-disabled:  var(--warm-grey-200);
+
+  --border-primary:   rgba(34, 0, 65, 0.10);   /* plum at 10% */
+  --border-secondary: rgba(34, 0, 65, 0.06);
+  --border-tertiary:  var(--orchid-200);
+  --border-strong:    var(--orchid-700);
+  --border-error:     var(--red-500);
+  --border-success:   var(--green-500);
+  --border-warning:   var(--yellow-500);
+  --border-disabled:  var(--warm-grey-300);
+
+  /* Accent — the new brand primary */
+  --accent:           var(--orchid-700);
+  --accent-hover:     var(--orchid-800);
+  --accent-soft:      var(--orchid-100);
+  --accent-on:        #ffffff;
+
+  /* ---------- Typography scale ---------- */
+  /* Display (hero taglines, cover slides) */
+  --text-display-xl:  clamp(64px, 8vw, 104px);  /* "Make grown up" */
+  --text-display-lg:  clamp(48px, 6vw, 82px);
+  --text-display-md:  clamp(36px, 5vw, 64px);
+
+  /* Headline */
+  --text-h1: 48px;
+  --text-h2: 32px;
+  --text-h3: 24px;
+  --text-h4: 20px;
+  --text-h5: 18px;
+  --text-h6: 16px;
+
+  /* Body */
+  --text-body-lg: 18px;
+  --text-body:    16px;
+  --text-body-sm: 14px;
+  --text-caption: 12px;
+  --text-micro:   11px;
+
+  /* Line heights */
+  --lh-tight:   1.05;
+  --lh-snug:    1.2;
+  --lh-normal:  1.45;
+  --lh-relaxed: 1.65;
+
+  /* Letter spacing */
+  --ls-display: -0.04em;
+  --ls-heading: -0.025em;
+  --ls-body:    -0.01em;
+  --ls-caps:    0.06em;
+
+  /* ---------- Spacing ---------- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  32px;
+  --space-8:  40px;
+  --space-9:  48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 96px;
+  --space-13: 128px;
+
+  /* ---------- Radii ---------- */
+  --radius-xs:    4px;
+  --radius-sm:    6px;
+  --radius-md:    8px;
+  --radius-lg:    10px;   /* the canonical bento-card radius */
+  --radius-xl:    16px;
+  --radius-2xl:   20px;   /* timeline cards */
+  --radius-pill:  999px;
+
+  /* ---------- Elevation ---------- */
+  --shadow-xs: 0 1px 2px rgba(34, 0, 65, 0.04);
+  --shadow-sm: 0 2px 6px rgba(34, 0, 65, 0.06), 0 1px 2px rgba(34, 0, 65, 0.04);
+  --shadow-md: 0 6px 16px rgba(34, 0, 65, 0.08), 0 2px 4px rgba(34, 0, 65, 0.04);
+  --shadow-lg: 0 20px 40px rgba(34, 0, 65, 0.10), 0 6px 10px rgba(34, 0, 65, 0.04);
+  --shadow-xl: 0 43px 27px rgba(0,0,0,0.02), 0 78px 31px rgba(0,0,0,0.01), 0 122px 34px rgba(0,0,0,0);
+  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.6);
+
+  /* ---------- Gradients / signature backgrounds ---------- */
+  /* The refreshed brand hero: warm paper with radial mauve + soft pink bloom */
+  --gradient-bloom: radial-gradient(120% 80% at 20% 30%, #FCF3F8 0%, #F7E7F8 40%, #EBD6F2 100%);
+  --gradient-mauve: linear-gradient(180deg, #5C2D87 0%, #B07FDD 100%);  /* chip gradient */
+  --gradient-orchid-deep: linear-gradient(180deg, var(--orchid-800), var(--mauve-800));
+  --gradient-paper: radial-gradient(ellipse at 50% 0%, #FFFFFF 0%, #FCF3F8 100%);
+  --gradient-logo: radial-gradient(circle at 20% 30%, #F024F6 20%, #C416F8 39%, #9406F9 61%, #8200FA 72%);
+  --glass-chip: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.60) 100%);
+
+  /* ---------- Motion ---------- */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:   cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:  120ms;
+  --dur-base:  220ms;
+  --dur-slow:  420ms;
+}
+
+/* ---------- Dark mode aliases ---------- */
+:root[data-theme="dark"] {
+  --bg-primary:    #1c1a1f;         /* warm grey 900 */
+  --bg-secondary:  var(--mauve-900);
+  --bg-tertiary:   var(--warm-grey-800);
+  --bg-elevated:   var(--warm-grey-800);
+
+  --text-primary:   #FCF3F8;
+  --text-secondary: var(--warm-grey-200);
+  --text-tertiary:  var(--warm-grey-400);
+  --text-muted:     var(--warm-grey-500);
+
+  --surface-primary:   var(--warm-grey-900);
+  --surface-secondary: var(--warm-grey-800);
+  --surface-tertiary:  var(--mauve-800);
+
+  --border-primary:   rgba(255,255,255,0.10);
+  --border-secondary: rgba(255,255,255,0.06);
+  --border-tertiary:  var(--orchid-700);
+
+  --accent:           var(--orchid-400);
+  --accent-hover:     var(--orchid-300);
+  --accent-soft:      var(--mauve-800);
+}
+
+/* ==========================================================================
+   Semantic element styles — drop-in defaults
+   ========================================================================== */
+
+html { font-family: var(--font-sans); color: var(--text-primary); background: var(--bg-primary); -webkit-font-smoothing: antialiased; }
+body { font-size: var(--text-body); line-height: var(--lh-normal); letter-spacing: var(--ls-body); margin: 0; }
+
+h1, .h1 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-h1); line-height: var(--lh-tight); letter-spacing: var(--ls-display); color: var(--text-primary); margin: 0; }
+h2, .h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-h2); line-height: var(--lh-snug);  letter-spacing: var(--ls-display); color: var(--text-primary); margin: 0; }
+h3, .h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-h3); line-height: var(--lh-snug);  letter-spacing: var(--ls-heading); margin: 0; }
+h4, .h4 { font-weight: 600; font-size: var(--text-h4); line-height: var(--lh-snug); letter-spacing: var(--ls-heading); margin: 0; }
+h5, .h5 { font-weight: 600; font-size: var(--text-h5); line-height: var(--lh-snug); margin: 0; }
+h6, .h6 { font-weight: 600; font-size: var(--text-h6); line-height: var(--lh-snug); margin: 0; }
+
+p { margin: 0 0 1em; color: var(--text-secondary); }
+small, .caption { font-size: var(--text-caption); color: var(--text-tertiary); }
+code, kbd, pre { font-family: var(--font-mono); font-size: 0.925em; }
+
+.display-xl { font-family: var(--font-display); font-weight: 900; font-size: var(--text-display-xl); line-height: var(--lh-tight); letter-spacing: var(--ls-display); }
+.display-lg { font-family: var(--font-display); font-weight: 700; font-size: var(--text-display-lg); line-height: var(--lh-tight); letter-spacing: var(--ls-display); }
+.display-md { font-family: var(--font-display); font-weight: 700; font-size: var(--text-display-md); line-height: var(--lh-snug);  letter-spacing: var(--ls-display); }
+
+.eyebrow { font-size: var(--text-caption); font-weight: 500; letter-spacing: var(--ls-caps); text-transform: uppercase; color: var(--orchid-700); }
+
+/* Chip: the signature glassy capsule used across the preso */
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: var(--radius-pill);
+  background: var(--glass-chip);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  font-size: var(--text-caption); font-weight: 500; line-height: 1;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.chip-gradient {
+  display: inline-block; padding: 4px 14px; border-radius: var(--radius-sm);
+  background: var(--gradient-mauve); color: #FCF3F8;
+  font-size: var(--text-body-sm); font-weight: 500; letter-spacing: -0.015em;
+}
