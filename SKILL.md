@@ -9,7 +9,6 @@ description: Scans Jira, Confluence, Slack, Gmail, and Google Calendar for repea
   USER_NAME:      YOUR_NAME
   USER_TIMEZONE:  YOUR_TIMEZONE
   SCHEDULED_PATH: YOUR_SCHEDULED_PATH
-  SLACK_CHANNEL:  YOUR_SLACK_CHANNEL
 
   Prerequisites (MCP connections required):
   - Atlassian MCP (Jira + Confluence)
@@ -18,7 +17,7 @@ description: Scans Jira, Confluence, Slack, Gmail, and Google Calendar for repea
   - Gmail MCP
 -->
 
-**Before running any phase:** read the CONFIG block in the HTML comment at the top of this file and resolve the four variables — `USER_NAME`, `USER_TIMEZONE`, `SCHEDULED_PATH`, `SLACK_CHANNEL` — to their actual values. Use those values everywhere these placeholders appear below.
+**Before running any phase:** read the CONFIG block in the HTML comment at the top of this file and resolve the three variables — `USER_NAME`, `USER_TIMEZONE`, `SCHEDULED_PATH` — to their actual values. Use those values everywhere these placeholders appear below.
 
 You are running the weekly skill discovery for {USER_NAME}. Timezone: {USER_TIMEZONE}. Today's date is available from context.
 
@@ -45,15 +44,13 @@ Before doing anything else:
    - "What's your full name?"
    - "What's your timezone? (e.g. Europe/Prague, America/New_York, Asia/Singapore)"
    - "What's the full path to the folder where your Claude skills live? (e.g. /Users/yourname/Documents/Claude/Scheduled)"
-   - "Which Slack channel should I notify when I find new skill candidates? (e.g. #my-channel)"
 
-3. Use the Edit tool to update this SKILL.md file — replace the four CONFIG values with the user's answers:
+3. Use the Edit tool to update this SKILL.md file — replace the three CONFIG values with the user's answers:
    - `USER_NAME` → their full name
    - `USER_TIMEZONE` → their timezone
    - `SCHEDULED_PATH` → their skills folder path
-   - `SLACK_CHANNEL` → their Slack channel
 
-4. Re-read this SKILL.md file from disk and re-resolve all four CONFIG variables to their newly written values. Use these updated values for all remaining phases.
+4. Re-read this SKILL.md file from disk and re-resolve all three CONFIG variables to their newly written values. Use these updated values for all remaining phases.
 
 5. Confirm:
    > "✅ All set! Running your first discovery scan now..."
@@ -121,7 +118,7 @@ Try to get the URL of the current Claude session using the browser MCP tool (too
 
 ### Step 5 — Send Slack notification
 
-Use the Slack MCP tool (tool name contains `slack_send_message`) to post to `{SLACK_CHANNEL}`.
+Look up the current user's Slack ID using the Slack MCP tool (tool name contains `slack_search_users`), searching by `{USER_NAME}`. Use the returned user ID to send a **direct message to yourself** via the Slack MCP tool (tool name contains `slack_send_message`), passing the user ID as the channel. This works universally — no channel config required.
 
 Slack message format (mrkdwn):
 
@@ -201,7 +198,7 @@ Follow the same structure as existing skills:
 - Address {USER_NAME} by name at the top
 - Numbered steps with clear, executable instructions
 - Use the same Slack formatting conventions if the skill sends output there (use `――――――――――――――――――――――` as dividers, `*bold*` and `_italic_` only)
-- End with: use the Slack MCP tool (tool name contains `slack_send_message`) to post to `{SLACK_CHANNEL}` if the skill outputs to Slack
+- End with: use the Slack MCP tool (tool name contains `slack_send_message`) to send a direct message to the user (look up their Slack user ID by name first) if the skill outputs to Slack
 
 ### Step 9 — Schedule if recurring
 
