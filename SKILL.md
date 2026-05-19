@@ -53,10 +53,12 @@ Before doing anything else:
    - `SCHEDULED_PATH` → their skills folder path
    - `SLACK_CHANNEL` → their Slack channel
 
-4. Confirm:
+4. Re-read this SKILL.md file from disk and re-resolve all four CONFIG variables to their newly written values. Use these updated values for all remaining phases.
+
+5. Confirm:
    > "✅ All set! Running your first discovery scan now..."
 
-5. Continue directly to Phase 1.
+6. Continue directly to Phase 1.
 
 ---
 
